@@ -1,0 +1,46 @@
+# Local .terraform directories (providers, modules)
+**/.terraform/*
+
+# State files (may contain secrets)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Variable files that commonly hold secrets or environment-specific values
+*.tfvars
+*.tfvars.json
+
+# Override files, usually local-only
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plan output files
+*.tfplan
+tfplan
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Terragrunt / Terraform tooling caches
+.terragrunt-cache/
+.terraform.tfstate.lock.info
+
+# Keep the dependency lock file committed (do NOT ignore .terraform.lock.hcl)
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+
+# OS / editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
