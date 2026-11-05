@@ -1,0 +1,52 @@
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+
+[[repos.hooks]]
+id = "trailing-whitespace"
+
+[[repos.hooks]]
+id = "end-of-file-fixer"
+
+[[repos.hooks]]
+id = "check-yaml"
+
+[[repos.hooks]]
+id = "check-added-large-files"
+
+[[repos.hooks]]
+id = "check-merge-conflict"
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "secret-scan"
+name = "Secret scan with betterleaks/gitleaks"
+entry = "bash ./scripts/hooks/secret-scan.sh"
+language = "system"
+pass_filenames = false
+
+[[repos.hooks]]
+id = "terraform-fix"
+name = "terraform fmt"
+entry = "just tf-fix"
+language = "system"
+files = '^terraform/.*\.(tf|hcl)$'
+pass_filenames = false
+
+[[repos.hooks]]
+id = "terraform-validate"
+name = "terraform validate"
+entry = "just tf-validate"
+language = "system"
+files = '^terraform/.*\.(tf|hcl)$'
+pass_filenames = false
+
+[[repos.hooks]]
+id = "tflint"
+name = "tflint"
+entry = "just tf-lint"
+language = "system"
+files = '^(terraform/.*\.(tf|hcl)|\.tflint\.hcl)$'
+pass_filenames = false
